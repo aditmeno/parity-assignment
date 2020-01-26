@@ -1,0 +1,5 @@
+FROM archlinux:latest
+RUN mkdir /app
+COPY build-artefact/substrate/node-template /app/
+COPY entrypoint.sh /app/
+WORKDIR /app

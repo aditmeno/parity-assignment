@@ -1,0 +1,13 @@
+FROM archlinux:latest
+RUN mkdir /app
+ENV TELEMETRY_SERVER=1024
+ENV FEED_SERVER=8080
+RUN pacman -Sy nodejs npm yarn --noconfirm
+COPY build-artefact/substrate-telemetry/telemetry /app/
+COPY build-artefact/substrate-telemetry/package.json /app/
+COPY build-artefact/substrate-telemetry/yarn.lock /app/
+COPY build-artefact/substrate-telemetry/tsconfig.json /app/
+COPY build-artefact/substrate-telemetry/node_modules /app/node_modules
+COPY build-artefact/substrate-telemetry/scripts /app/scripts
+COPY build-artefact/substrate-telemetry/packages /app/packages
+WORKDIR /app
