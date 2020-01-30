@@ -51,7 +51,7 @@ terraform apply -auto-approve -var namespace="parity" \
 cd ../alice-pod
 terraform init
 terraform plan -var namespace="parity" 
-  -var container_image="rezesius/substrate-telemetry" \
+  -var container_image="rezesius/substrate" \
   -var port=30333 \
   -var ws_port=9944 \
   -var rpc_port=9933 
@@ -63,11 +63,11 @@ terrafotm apply -auto-approve -var container_image="rezesius/substrate-telemetry
 cd ../substrate
 terraform init
 terraform plan -var namespace="parity" \
-  -var container_image="rezesius/substrate-telemetry" \
-  -var port=30333 \
-  -var ws_port=9944 \
-  -var rpc_port=9933 
-terrafotm apply -auto-approve -var container_image="rezesius/substrate-telemetry" \
-  -var port=30333 \
-  -var ws_port=9944 \
-  -var rpc_port=9933 
+  -var container_image="rezesius/substrate" \
+  -var port=30334 \
+  -var ws_port=9945 \
+  -var rpc_port=9934 
+terrafotm apply -auto-approve -var container_image="rezesius/substrate" \
+  -var port=30334 \
+  -var ws_port=9945 \
+  -var rpc_port=9934 
